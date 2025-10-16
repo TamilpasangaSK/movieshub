@@ -1,0 +1,229 @@
+/* src/styles/DownloadModal.css */
+
+.download-modal-overlay {
+  position: fixed;
+  top: 20%; /* Restored: Pushes the modal down from the top */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: flex-start; /* Changed: Aligns modal to the top (respects top: 20%) */
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+  padding: 20px;
+  overflow-y: auto; /* Allows scrolling on small screens if modal is too tall */
+}
+
+.download-modal-content {
+  position: relative;
+  background: #1c132c;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 550px;
+  padding: 32px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  color: #e0e0e0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.download-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #e0e0e0;
+  cursor: pointer;
+  padding: 8px;
+  transition: all 0.2s ease;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-modal-close:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  margin-bottom: 24px; /* Space below the entire header block */
+}
+
+.download-icon-wrapper {
+  height: 60px;
+  width: 60px;
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.download-icon-wrapper svg {
+  color: #fff;
+  width: 32px;
+  height: 32px;
+}
+
+.modal-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.modal-header p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.movie-summary-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+  margin-bottom: 24px; /* Space below the summary card */
+}
+
+.summary-poster {
+  width: 60px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.summary-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.summary-info h3 {
+  color: #fff;
+  font-size: 1.16rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.summary-info p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.file-description-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: left;
+  margin-bottom: 24px; /* Space below the description card */
+}
+
+.file-description-card p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 10px 0;
+}
+
+.file-description-card span {
+  display: block;
+  font-size: 0.95rem;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  color: #fff;
+  word-break: break-all;
+  background: rgba(0,0,0,0.2);
+  padding: 8px;
+  border-radius: 6px;
+}
+
+/* Buttons */
+.btn-start-download,
+.btn-telegram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  gap: 10px;
+}
+
+.btn-start-download {
+  background: linear-gradient(90deg, #7c3aed, #ec4899);
+  color: #fff;
+  border: none;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.2);
+  margin-bottom: 12px; /* This creates the gap between the two buttons */
+}
+
+.btn-start-download:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(124, 58, 237, 0.3);
+}
+
+.btn-start-download svg {
+    width: 20px;
+    height: 20px;
+    color: #fff;
+}
+
+.btn-telegram {
+  background: transparent;
+  border: 2px solid #8f60cc;
+  color: #c084fc;
+  margin-bottom: 0; /* Ensures no extra space at the bottom of the modal */
+}
+
+.btn-telegram:hover {
+  background: rgba(124, 58, 237, 0.1);
+  border-color: #a78bfa;
+  transform: translateY(-3px);
+  color: #e0e0e0;
+}
+.btn-telegram svg {
+    color: #c084fc;
+    width: 20px;
+    height: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 550px) {
+  .download-modal-content {
+    padding: 24px;
+  }
+  .modal-header h2 {
+    font-size: 1.5rem;
+  }
+  .btn-start-download, .btn-telegram {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}

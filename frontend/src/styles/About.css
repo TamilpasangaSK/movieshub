@@ -1,0 +1,205 @@
+/* Page layout */
+.about-page {
+  min-height: 100vh;
+  padding: 40px 18px;
+  background: linear-gradient(180deg,#1b0630 0%, #351045 45%, #1b0630 100%);
+  font-family: "Segoe UI", Roboto, system-ui, -apple-system, sans-serif;
+  color: #e6eef8;
+}
+
+/* Container that holds both cards */
+.about-container {
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+
+/* Card shared styles */
+.about-card,
+.contact-card {
+    background:
+    radial-gradient(800px 400px at 8% 8%, rgba(124,58,237,0.07), transparent 8%),
+    radial-gradient(700px 350px at 92% 92%, rgba(236,72,153,0.05), transparent 8%),
+    linear-gradient(180deg,#1b0630 0%, #3b0f66 45%, #201032 100%);
+  padding: 22px;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Headings */
+.about-card h1 {
+  margin: 0 0 12px 0;
+  color: #ffffff;
+  font-size: 1.6rem;
+}
+.about-card h3 {
+  color: #ffcc00;
+  margin-top: 14px;
+  margin-bottom: 8px;
+}
+.contact-card h2 {
+  margin: 0 0 6px 0;
+  color: #ffffff;
+  font-size: 1.3rem;
+}
+.contact-sub {
+  color: rgba(230,238,248,0.8);
+  margin-bottom: 14px;
+}
+
+/* Paragraphs and lists */
+.about-card p,
+.about-card ul {
+  color: rgba(230,238,248,0.85);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.about-card ul {
+  padding-left: 18px;
+}
+.about-card li {
+  margin-bottom: 8px;
+}
+
+
+/* === CORRECTED TELEGRAM BUTTON STYLES === */
+.cta-row {
+  margin-top: 14px;
+}
+
+.telegram-btn {
+  /* Behavior and Layout */
+  display: inline-flex; /* Use inline-flex for better alignment of text/icons */
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  width: fit-content; /* FIXED: This makes the button fit its content */
+  
+  /* Appearance */
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+  padding: 10px 20px; /* Adjusted padding for better look */
+  border-radius: 8px;
+  font-weight: 600;
+  
+  /* Effects */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.6), 0 0 24px rgba(59, 130, 246, 0.4);
+  animation: glowPulse 2s infinite;
+}
+
+/* Hover animation */
+.telegram-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 18px rgba(59, 130, 246, 0.8), 0 0 36px rgba(59, 130, 246, 0.6);
+}
+
+/* Glowing pulse animation */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 8px rgba(59,130,246,0.5), 0 0 20px rgba(59,130,246,0.3);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(59,130,246,0.9), 0 0 36px rgba(59,130,246,0.6);
+  }
+  100% {
+    box-shadow: 0 0 8px rgba(59,130,246,0.5), 0 0 20px rgba(59,130,246,0.3);
+  }
+}
+
+/* Smaller version */
+.telegram-btn.small {
+  padding: 8px 14px; /* Adjusted padding */
+  font-size: 0.95rem;
+}
+/* === END OF CORRECTED STYLES === */
+
+
+/* Contact form */
+.contact-form {
+  margin-top: 6px;
+}
+.contact-form .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: rgba(230,238,248,0.9);
+}
+.contact-form label.full {
+  grid-column: 1 / -1;
+}
+.contact-form input,
+.contact-form textarea {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  color: #e6eef8;
+  padding: 10px 12px;
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.95rem;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 8px rgba(59,130,246,0.12);
+  border-color: rgba(59,130,246,0.6);
+}
+
+/* Send button */
+.send-btn {
+  margin-top: 12px;
+  width: 100%;
+  background: linear-gradient(90deg, #7c3aed, #ec4899);
+  color: #fff;
+  border: none;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.send-btn:hover { transform: translateY(-1px); }
+
+/* Other ways section */
+.other-ways {
+  margin-top: 18px;
+}
+.other-ways h4 {
+  margin: 0 0 10px 0;
+  color: #fff;
+}
+.other-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.other-block h5 {
+  margin: 0 0 8px 0;
+  color: #ffdd57;
+}
+.other-block a {
+  color: #9fc8ff;
+  text-decoration: none;
+}
+.other-block p { margin: 6px 0; color: rgba(230,238,248,0.8); }
+
+/* Responsive */
+@media (max-width: 780px) {
+  .about-container {
+    padding: 0 6px;
+  }
+  .contact-form .row {
+    grid-template-columns: 1fr;
+  }
+  .other-grid {
+    grid-template-columns: 1fr;
+  }
+}

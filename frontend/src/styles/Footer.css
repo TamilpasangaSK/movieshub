@@ -1,0 +1,171 @@
+/* --- Main Footer Container --- */
+.site-footer {
+    background: linear-gradient(180deg, rgba(31,12,51,0.8), #1b0630 80%);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 48px 24px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* --- Content Grid --- */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+}
+
+/* --- Column Styling --- */
+.footer-column h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 16px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+/* Underline effect for headings */
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, #7c3aed, #ec4899);
+}
+
+.footer-column p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+/* --- Links Styling --- */
+.links-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links-section li {
+    margin-bottom: 10px;
+}
+
+.links-section a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.links-section a:hover {
+    color: #fff;
+    padding-left: 5px;
+}
+
+
+/* --- Newsletter Form --- */
+.newsletter-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.newsletter-section input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+}
+.newsletter-section input:focus {
+    border-color: #7c3aed;
+}
+
+.newsletter-section button {
+    padding: 10px 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    background: linear-gradient(90deg, #7c3aed, #ec4899);
+    transition: transform 0.16s ease;
+}
+
+.newsletter-section button:hover {
+    transform: translateY(-2px);
+}
+
+/* --- Social Media Icons --- */
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-links a {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    color: #fff;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.social-links a:hover {
+    background-color: #7c3aed;
+    transform: translateY(-2px);
+}
+.social-links svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+
+/* --- Bottom Bar --- */
+.footer-bottom {
+    text-align: center;
+    padding: 24px 0;
+    margin-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .footer-content {
+        gap: 40px;
+    }
+}
+
+/* Add this to the end of your src/styles/Footer.css file */
+
+.links-section button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem; /* Match font size of links */
+  transition: color 0.2s ease;
+}
+
+.links-section button:hover {
+  color: #fff;
+}
+
