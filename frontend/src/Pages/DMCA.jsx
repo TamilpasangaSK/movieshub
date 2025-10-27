@@ -1,5 +1,5 @@
 import React from "react";
-import '../../styles/dmca.css';
+import "../styles/Dmca.css";
 
 const DMCA = () => {
   return (
