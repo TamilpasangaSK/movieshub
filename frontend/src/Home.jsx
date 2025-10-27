@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import RecentSlider from "./Components/RecentSlider";
 import TelegramButton from "./Components/TelegramButton";
 import FilterBar from "./Components/FilterBar";
-import MovieGrid from "./components/MovieGrid";
+import MovieGrid from "./components/movieGrid";
 import { movies as allMovies } from "./data/movies"; // ensure this exports `movies` array
 import "./styles/slider.css";
 import "./styles/filterbar.css";
