@@ -60,41 +60,46 @@ async function start() {
 
 start();
 
-app.post('/login', async (req, res) => {
-    try {
-        const { email, password } = req.body;
-        const user = await UserModel.findOne({ email }).exec();
-        if (!user) return res.status(404).json({ message: 'User not found' });
-        if (user.password !== password) return res.status(401).json({ message: 'Invalid password' });
-        return res.json({ message: 'Login Successful' });
-    } catch (err) {
-        return res.status(500).json({ message: 'Server error', error: err.message || err });
-    }
-});
+app.post('/login', (req, res) => {
+    const { email, password } = req.body;
+    UserModel.findOne({ email })
+        .then(user => {
+            if (user) 
+            {
+                if(user.password === password)
+                {
+                    res.json("Login Successful");
+                }
+                else 
+                {
+                res.json("invalid password");
+                }
+            } 
+            else 
+            {
+                res.json("User not found");
+            }    
+        })
+        .catch(err => res.status(500).json({ message: 'Server error', error: err }));
+    });
 
 app.post('/register', async(req, res) => {
-   try {
-     const created = await UserModel.create(req.body);
-     return res.status(201).json(created);
-   } catch (err) {
-     return res.status(400).json({ message: 'Create failed', error: err.message || err });
-   }
+   UserModel.create(req.body)
+    .then(employe => res.json(employe))   
+    .catch(err => res.json(err));
 });
 
 app.post('/request', async (req, res) => {
-    try {
-      const request = await RequestModel.create(req.body);
-      return res.status(201).json(request);
-    } catch (err) {
-      return res.status(500).json({ message: 'Server error', error: err.message || err });
-    }
+    RequestModel.create(req.body)
+        .then(request => res.json(request))
+        .catch(err => res.status(500).json({ message: 'Server error', error: err }));
 }); 
 
 app.post('/about', async (req, res) => {
-    try {
-      const about = await AboutModel.create(req.body);
-      return res.status(201).json(about);
-    } catch (err) {
-      return res.status(500).json({ message: 'Server error', error: err.message || err });
-    }
+    AboutModel.create(req.body)
+        .then(about => res.json(about))
+        .catch(err => res.status(500).json({ message: 'Server error', error: err }));
 });
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
